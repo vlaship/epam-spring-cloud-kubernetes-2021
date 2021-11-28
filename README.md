@@ -35,14 +35,12 @@ To build the apps you can use Apache Maven because all the apps are using it. Ho
 the `build-scripts` directory contains a few more scripts which build app differently.
 
 * `build-images-naive.sh` - this script runs `mvn clean package` and next uses [simple and naive 
-  Dockerfile](https://github.com/aabarmin/epam-spring-cloud-kubernetes-2021/blob/master/build
-  -scripts/docker/basic/Dockerfile) to build Docker images. 
+  Dockerfile](https://github.com/aabarmin/epam-spring-cloud-kubernetes-2021/blob/master/build-scripts/docker/basic/Dockerfile) to build Docker images. 
 * `build-images-oci.sh` - this script builds Docker images with Spring Boot Maven plugin and 
   buildpacks. 
 * `build-images-layered.sh` - this script builds far-`jar`'s and next unpacks them using Spring 
   Boot layered jar. As soon as `jar` files are unpacked, they are next used to build layered 
-  Docker images manually via [another Dockerfile](https://github.
-  com/aabarmin/epam-spring-cloud-kubernetes-2021/blob/master/build-scripts/docker/layered/Dockerfile).
+  Docker images manually via [another Dockerfile](https://github.com/aabarmin/epam-spring-cloud-kubernetes-2021/blob/master/build-scripts/docker/layered/Dockerfile).
 * `build-images-kubernetes.sh` - this script builds jar files with `with-kubernetes` profile 
   active. This profile is important for the `math` provider - enables reload of configs from 
   `ConfigMap`s. 
